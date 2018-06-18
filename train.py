@@ -27,10 +27,11 @@ KEEP_PROB = 0.8
 BATCH_SIZE = 256
 NUM_EPOCHS = 3  # Model easily overfits without pre-trained words embeddings, that's why train for a few epochs
 DELTA = 0.5
-MODEL_PATH = './model'
+MODEL_PATH = './model/model'
 
 # Load the data set
-(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=NUM_WORDS, index_from=INDEX_FROM)
+# C:\Users\liyuncong\.keras\datasets
+(X_train, y_train), (X_test, y_test) = imdb.load_data(path='imdb.npz', num_words=NUM_WORDS, index_from=INDEX_FROM)
 
 # Sequences pre-processing
 vocabulary_size = get_vocabulary_size(X_train)
