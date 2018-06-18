@@ -75,6 +75,7 @@ with tf.name_scope('Fully_connected_layer'):
 
 with tf.name_scope('Metrics'):
     # Cross-entropy loss and optimizer initialization
+    # tf.nn.softmax_cross_entropy_with_logits() for muliti_class
     loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=y_hat, labels=target_ph))
     tf.summary.scalar('loss', loss)
     optimizer = tf.train.AdamOptimizer(learning_rate=1e-3).minimize(loss)
